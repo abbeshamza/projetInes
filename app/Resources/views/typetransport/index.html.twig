@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Typetransports list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Label</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for typeTransport in typeTransports %}
+            <tr>
+                <td><a href="{{ path('type_transport_show', { 'id': typeTransport.id }) }}">{{ typeTransport.id }}</a></td>
+                <td>{{ typeTransport.label }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('type_transport_show', { 'id': typeTransport.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('type_transport_edit', { 'id': typeTransport.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('type_transport_new') }}">Create a new typeTransport</a>
+        </li>
+    </ul>
+{% endblock %}

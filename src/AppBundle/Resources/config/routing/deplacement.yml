@@ -1,0 +1,24 @@
+deplacement_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Deplacement:index" }
+    methods:  GET
+
+deplacement_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Deplacement:show" }
+    methods:  GET
+
+deplacement_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Deplacement:new" }
+    methods:  [GET, POST]
+
+deplacement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Deplacement:edit" }
+    methods:  [GET, POST]
+
+deplacement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Deplacement:delete" }
+    methods:  DELETE

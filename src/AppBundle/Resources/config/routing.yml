@@ -1,0 +1,27 @@
+app_grade:
+    resource: "@AppBundle/Resources/config/routing/grade.yml"
+    prefix:   /grade
+
+app_type_grade:
+    resource: "@AppBundle/Resources/config/routing/typegrade.yml"
+    prefix:   /type_grade
+
+app_type_voiture:
+    resource: "@AppBundle/Resources/config/routing/typevoiture.yml"
+    prefix:   /type_voiture
+
+app_user:
+    resource: "@AppBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+app_deplacement:
+    resource: "@AppBundle/Resources/config/routing/deplacement.yml"
+    prefix:   /deplacement
+
+app_type_transport:
+    resource: "@AppBundle/Resources/config/routing/typetransport.yml"
+    prefix:   /type_transport
+app_fos:
+    resource: "@AppBundle/Resources/config/routing/fos_user.yml"
+    prefix:   /
+

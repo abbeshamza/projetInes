@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Deplacements list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Depart</th>
+                <th>Destination</th>
+                <th>Nbklm</th>
+                <th>Datedepart</th>
+                <th>Datearrive</th>
+                <th>Avancerecu</th>
+                <th>Fraistransport</th>
+                <th>Fraisdeplacement</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for deplacement in deplacements %}
+            <tr>
+                <td><a href="{{ path('deplacement_show', { 'id': deplacement.id }) }}">{{ deplacement.id }}</a></td>
+                <td>{{ deplacement.depart }}</td>
+                <td>{{ deplacement.destination }}</td>
+                <td>{{ deplacement.nbKlm }}</td>
+                <td>{% if deplacement.dateDepart %}{{ deplacement.dateDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if deplacement.dateArrive %}{{ deplacement.dateArrive|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ deplacement.avanceRecu }}</td>
+                <td>{{ deplacement.fraisTransport }}</td>
+                <td>{{ deplacement.fraisDeplacement }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('deplacement_show', { 'id': deplacement.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('deplacement_edit', { 'id': deplacement.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('deplacement_new') }}">Create a new deplacement</a>
+        </li>
+    </ul>
+{% endblock %}

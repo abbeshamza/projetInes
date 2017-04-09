@@ -1,0 +1,24 @@
+voiture_type_index:
+    path:     /
+    defaults: { _controller: "AppBundle:TypeVoiture:index" }
+    methods:  GET
+
+voiture_type_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:TypeVoiture:show" }
+    methods:  GET
+
+voiture_type_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:TypeVoiture:new" }
+    methods:  [GET, POST]
+
+voiture_type_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:TypeVoiture:edit" }
+    methods:  [GET, POST]
+
+voiture_type_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:TypeVoiture:delete" }
+    methods:  DELETE

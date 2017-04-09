@@ -1,0 +1,4 @@
+services:
+    app.deplacement_manager:
+        class :     AppBundle\Manager\DeplacementManager
+        arguments:  ["@service_container"]

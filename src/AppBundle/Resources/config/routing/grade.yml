@@ -1,0 +1,24 @@
+grade_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Grade:index" }
+    methods:  GET
+
+grade_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Grade:show" }
+    methods:  GET
+
+grade_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Grade:new" }
+    methods:  [GET, POST]
+
+grade_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Grade:edit" }
+    methods:  [GET, POST]
+
+grade_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Grade:delete" }
+    methods:  DELETE

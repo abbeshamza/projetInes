@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Typegrades list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Label</th>
+                <th>Fraisdej</th>
+                <th>Fraisdiner</th>
+                <th>Fraishebergement</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for typeGrade in typeGrades %}
+            <tr>
+                <td><a href="{{ path('grade_type_show', { 'id': typeGrade.id }) }}">{{ typeGrade.id }}</a></td>
+                <td>{{ typeGrade.label }}</td>
+                <td>{{ typeGrade.fraisDej }}</td>
+                <td>{{ typeGrade.fraisDiner }}</td>
+                <td>{{ typeGrade.fraisHebergement }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('grade_type_show', { 'id': typeGrade.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('grade_type_edit', { 'id': typeGrade.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('grade_type_new') }}">Create a new typeGrade</a>
+        </li>
+    </ul>
+{% endblock %}

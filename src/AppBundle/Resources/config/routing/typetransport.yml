@@ -1,0 +1,24 @@
+type_transport_index:
+    path:     /
+    defaults: { _controller: "AppBundle:TypeTransport:index" }
+    methods:  GET
+
+type_transport_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:TypeTransport:show" }
+    methods:  GET
+
+type_transport_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:TypeTransport:new" }
+    methods:  [GET, POST]
+
+type_transport_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:TypeTransport:edit" }
+    methods:  [GET, POST]
+
+type_transport_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:TypeTransport:delete" }
+    methods:  DELETE

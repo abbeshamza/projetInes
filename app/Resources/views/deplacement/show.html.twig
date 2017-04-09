@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Deplacement</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ deplacement.id }}</td>
+            </tr>
+            <tr>
+                <th>Depart</th>
+                <td>{{ deplacement.depart }}</td>
+            </tr>
+            <tr>
+                <th>Destination</th>
+                <td>{{ deplacement.destination }}</td>
+            </tr>
+            <tr>
+                <th>Nbklm</th>
+                <td>{{ deplacement.nbKlm }}</td>
+            </tr>
+            <tr>
+                <th>Datedepart</th>
+                <td>{% if deplacement.dateDepart %}{{ deplacement.dateDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datearrive</th>
+                <td>{% if deplacement.dateArrive %}{{ deplacement.dateArrive|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Avancerecu</th>
+                <td>{{ deplacement.avanceRecu }}</td>
+            </tr>
+            <tr>
+                <th>Fraistransport</th>
+                <td>{{ deplacement.fraisTransport }}</td>
+            </tr>
+            <tr>
+                <th>Fraisdeplacement</th>
+                <td>{{ deplacement.fraisDeplacement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('deplacement_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('deplacement_edit', { 'id': deplacement.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

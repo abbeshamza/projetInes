@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Typegrade</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ typeGrade.id }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ typeGrade.label }}</td>
+            </tr>
+            <tr>
+                <th>Fraisdej</th>
+                <td>{{ typeGrade.fraisDej }}</td>
+            </tr>
+            <tr>
+                <th>Fraisdiner</th>
+                <td>{{ typeGrade.fraisDiner }}</td>
+            </tr>
+            <tr>
+                <th>Fraishebergement</th>
+                <td>{{ typeGrade.fraisHebergement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('grade_type_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('grade_type_edit', { 'id': typeGrade.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

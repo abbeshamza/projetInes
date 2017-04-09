@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+   <h1>Home</h1>
+    Listes des actions :
+    <ul>
+       <li><a href="{{ path('grade_index') }}">Gestion des grade</a></li>
+       <li><a href="{{ path('grade_type_index') }}">Gestion des type des grades</a></li>
+       <li><a href="{{ path('voiture_type_index') }}">Gestion des type des voitures</a></li>
+       <li><a href="{{ path('user_index') }}">Gestion des users</a></li>
+       <li><a href="{{ path('deplacement_index') }}">Gestion des frais de déplacements</a></li>
+       <li><a href="{{ path('type_transport_index') }}"> Gestion des type de transport</a></li>
+    </ul>
+{% endblock %}
