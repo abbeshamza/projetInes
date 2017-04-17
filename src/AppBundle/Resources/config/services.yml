@@ -1,4 +1,0 @@
-services:
-    app.deplacement_manager:
-        class :     Apr\MandataireBundle\Manager\MandataireManager
-        arguments:  ["@service_container"]

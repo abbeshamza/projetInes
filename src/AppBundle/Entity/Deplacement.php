@@ -16,7 +16,7 @@ use AppBundle\Entity\User;
 class Deplacement
 {
     Const KILOMETRAGE_MIN = 15;
-    Const DUREE_MIN= 7;
+    Const DUREE_MIN = 7;
     /**
      * @var integer
      *
@@ -93,6 +93,16 @@ class Deplacement
     private $typeTransport;
 
     /**
+     * @var typeVoiture
+     *
+     * @ORM\ManyToOne(targetEntity="TypeVoiture")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="type_voiture", referencedColumnName="id")
+     * })
+     */
+    private $typeVoiture;
+
+    /**
      * @var \User
      *
      * @ORM\ManyToOne(targetEntity="User")
@@ -103,11 +113,27 @@ class Deplacement
     private $user;
 
 
+    /**
+     * @var boolean $hasHebergement
+     *
+     * @ORM\Column(name="hasHebergement", type="boolean")
+     */
+
+    private $hasHebergement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fraisTransportPublic", type="string", length=45, nullable=true)
+     */
+    private $fraisTransportPublic;
+
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -130,7 +156,7 @@ class Deplacement
     /**
      * Get depart
      *
-     * @return string 
+     * @return string
      */
     public function getDepart()
     {
@@ -153,7 +179,7 @@ class Deplacement
     /**
      * Get destination
      *
-     * @return string 
+     * @return string
      */
     public function getDestination()
     {
@@ -176,7 +202,7 @@ class Deplacement
     /**
      * Get nbKlm
      *
-     * @return integer 
+     * @return integer
      */
     public function getNbKlm()
     {
@@ -199,7 +225,7 @@ class Deplacement
     /**
      * Get dateDepart
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateDepart()
     {
@@ -222,7 +248,7 @@ class Deplacement
     /**
      * Get dateArrive
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateArrive()
     {
@@ -245,7 +271,7 @@ class Deplacement
     /**
      * Get avanceRecu
      *
-     * @return float 
+     * @return float
      */
     public function getAvanceRecu()
     {
@@ -268,7 +294,7 @@ class Deplacement
     /**
      * Get fraisTransport
      *
-     * @return float 
+     * @return float
      */
     public function getFraisTransport()
     {
@@ -291,7 +317,7 @@ class Deplacement
     /**
      * Get fraisDeplacement
      *
-     * @return float 
+     * @return float
      */
     public function getFraisDeplacement()
     {
@@ -314,7 +340,7 @@ class Deplacement
     /**
      * Get typeTransport
      *
-     * @return \AppBundle\Entity\TypeTransport 
+     * @return \AppBundle\Entity\TypeTransport
      */
     public function getTypeTransport()
     {
@@ -337,11 +363,78 @@ class Deplacement
     /**
      * Get user
      *
-     * @return \AppBundle\Entity\User 
+     * @return \AppBundle\Entity\User
      */
     public function getUser()
     {
         return $this->user;
+    }
+
+
+    /**.
+     * Set hasHebergemen
+     *
+     * @param boolean $isEnabled
+     */
+    public function setHasHebergement($isEnabled)
+    {
+        $this->hasHebergement = $isEnabled;
+    }
+
+    /**
+     * Get hasHebergemen
+     *
+     * @return boolean
+     */
+    public function getHasHebergement()
+    {
+        return $this->hasHebergement;
+    }
+
+    /**
+     * Set typeVoiture
+     *
+     * @param \AppBundle\Entity\TypeVoiture $typeVoiture
+     * @return User
+     */
+    public function setTypeVoiture(\AppBundle\Entity\TypeVoiture $typeVoiture = null)
+    {
+        $this->typeVoiture = $typeVoiture;
+
+        return $this;
+    }
+
+    /**
+     * Get typeVoiture
+     *
+     * @return \AppBundle\Entity\TypeVoiture
+     */
+    public function getTypeVoiture()
+    {
+        return $this->typeVoiture;
+    }
+
+    /**
+     * Set fraisTransportPublic
+     *
+     * @param string $fraisTransportPublic
+     * @return Deplacement
+     */
+    public function setFraisTransportPublic($fraisTransportPublic)
+    {
+        $this->fraisTransportPublic = $fraisTransportPublic;
+
+        return $this;
+    }
+
+    /**
+     * Get fraisTransportPublic
+     *
+     * @return string
+     */
+    public function getFraisTransportPublic()
+    {
+        return $this->fraisTransportPublic;
     }
 
 }

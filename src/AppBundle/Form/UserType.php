@@ -13,7 +13,9 @@ class UserType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('grade')->add('typeGrade');
+        $builder
+            ->add('grade')
+            ->add('typeGrade');
     }
     
     /**

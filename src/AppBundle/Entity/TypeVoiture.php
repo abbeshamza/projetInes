@@ -95,6 +95,6 @@ class TypeVoiture
 
     function __toString()
     {
-        return $this->nbChevaux + "Chevaux";
+        return $this->nbChevaux . " Chevaux";
     }
 }

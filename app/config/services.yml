@@ -2,3 +2,6 @@ services:
     app.deplacement_manager:
         class :     AppBundle\Manager\DeplacementManager
         arguments:  ["@service_container"]
+    app.date_format:
+        class :     AppBundle\Manager\DateFormat
+        arguments:  ["@service_container"]

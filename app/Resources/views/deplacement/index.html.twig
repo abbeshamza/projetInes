@@ -10,11 +10,13 @@
                 <th>Depart</th>
                 <th>Destination</th>
                 <th>Nbklm</th>
+                <th>type Voiture utilisée</th>
                 <th>Datedepart</th>
                 <th>Datearrive</th>
                 <th>Avancerecu</th>
                 <th>Fraistransport</th>
                 <th>Fraisdeplacement</th>
+                <th>Has Hebergement</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -25,11 +27,13 @@
                 <td>{{ deplacement.depart }}</td>
                 <td>{{ deplacement.destination }}</td>
                 <td>{{ deplacement.nbKlm }}</td>
+                <td>{{ deplacement.typeVoiture }}</td>
                 <td>{% if deplacement.dateDepart %}{{ deplacement.dateDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if deplacement.dateArrive %}{{ deplacement.dateArrive|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ deplacement.avanceRecu }}</td>
                 <td>{{ deplacement.fraisTransport }}</td>
                 <td>{{ deplacement.fraisDeplacement }}</td>
+                <td>{{ deplacement.hasHebergement }}</td>
                 <td>
                     <ul>
                         <li>

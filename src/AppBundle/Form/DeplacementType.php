@@ -16,11 +16,14 @@ class DeplacementType extends AbstractType
         $builder
             ->add('user')
             ->add('typeTransport')
+            ->add('fraisTransportPublic')
+            ->add('typeVoiture')
             ->add('depart')
             ->add('destination')
             ->add('nbKlm')
             ->add('dateDepart')
             ->add('dateArrive')
+            ->add('hasHebergement')
             ->add('avanceRecu');
     }
     

@@ -22,6 +22,10 @@
                 <td>{{ deplacement.nbKlm }}</td>
             </tr>
             <tr>
+                <td>Type voiture utilisée</td>
+                <td> {{ deplacement.typeVoiture }}</td>
+            </tr>
+            <tr>
                 <th>Datedepart</th>
                 <td>{% if deplacement.dateDepart %}{{ deplacement.dateDepart|date('Y-m-d H:i:s') }}{% endif %}</td>
             </tr>
@@ -40,6 +44,10 @@
             <tr>
                 <th>Fraisdeplacement</th>
                 <td>{{ deplacement.fraisDeplacement }}</td>
+            </tr>
+            <tr>
+                <th>hasHebergement</th>
+                <td>{{ deplacement.hasHebergement }}</td>
             </tr>
         </tbody>
     </table>
